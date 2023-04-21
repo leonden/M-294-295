@@ -20,7 +20,6 @@ public class Election {
     @NotEmpty
     private String title;
     private String description;
-
     @Size(min = 0, max = 100)
     private int progress;
 

@@ -11,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue
@@ -24,15 +24,13 @@ public class User {
     @JsonProperty("last_name")
     private String lastName;
     private boolean adult;
-    @Size(min = 16)
     private int age;
     private String street;
     private String city;
-    @Size(min = 1000)
     @JsonProperty("zip_code")
     private int zipCode;
 
-    public User() {
+    public Person() {
     }
 
 }

@@ -25,8 +25,7 @@ public class SecurityConfig {
             "/swagger-ui/**",
             "/swagger-ui.html",
             "/v3/api-docs.yaml",
-            "/hello",
-            "save-user"
+            "/hello"
     };
 
     @Bean
