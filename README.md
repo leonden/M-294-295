@@ -1,4 +1,4 @@
-<img src="./public/votez_logo.png" width="50px" style="float: left; margin-right: 15px"/>
+<img src="./public/votez_logo.png" />
 
 # votez
 
