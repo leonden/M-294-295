@@ -1,4 +1,6 @@
-# Vote-App
+<img src="./public/votez_logo.png" width="50px" style="float: left; margin-right: 15px"/>
+
+# votez
 
 A voting app in Java [Spring Boot](https://spring.io/) and [Angular](https://angular.io/).
 
@@ -8,7 +10,7 @@ This project is related to the module [294](https://www.modulbaukasten.ch/module
 
 ## Content
 
-- [Vote-App](#vote-app)
+- [votez](#votez)
   - [Content](#content)
   - [Description](#description)
   - [GitHub](#github)
