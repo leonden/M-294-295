@@ -9,11 +9,15 @@ A voting app in Java [Spring Boot](https://spring.io/) and [Angular](https://ang
 - [Vote-App](#vote-app)
   - [Content](#content)
   - [Description](#description)
+  - [GitHub](#github)
   - [Backend](#backend)
     - [Run](#run)
   - [Frontend](#frontend)
     - [Run](#run-1)
-  - [GitHub](#github)
+  - [Data](#data)
+  - [Security](#security)
+    - [Authentication](#authentication)
+  - [Licensing](#licensing)
 
 ---
 
@@ -22,6 +26,18 @@ A voting app in Java [Spring Boot](https://spring.io/) and [Angular](https://ang
 The system is capable of displaying results from multiple users in one election statistic. You can create several elections in which the users can make their entries. The elections, as well as the results, should refer to a database via a REST interface and be saved there.
 
 Users can log in to the application via a login page. Elections and their results can be viewed without registration, but registration is mandatory in order to be able to take part in them.
+
+---
+
+## GitHub
+
+The application is saved in a [GitHub](https://github.com/leonden/vote-app) repository.
+
+Feel free to fork the project to your local machine.
+
+```shell
+git clone https://github.com/leonden/vote-app.git
+```
 
 ---
 
@@ -47,20 +63,28 @@ After running this command, you can head to http://localhost:8080 to see the API
 
 The frontend is implemented in [TypeScript](https://typescriptlang.org/) as an [Angular](https://angular.io/) application.
 
+For efficient development purposes, the app uses the [Angular Material](https://material.angular.io) component library from Google.
+
 ### Run
 
 From the root project directory, cd into `\frontend\vote-app\` and run `ng serve` for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
 
 ---
 
-## GitHub
+## Data
 
-The application is saved in a [GitHub](https://github.com/leonden/vote-app) repository.
-
-Feel free to fork the project to your local machine.
-
-```shell
-git clone https://github.com/leonden/vote-app.git
-```
+Data is stored in a [PostgreSQL](https://www.postgresql.org/) database. For an easy usage and database integration, the app uses [Java JPA](https://www.ibm.com/docs/de/was-liberty/base?topic=overview-java-persistence-api-jpa).
 
 ---
+
+## Security
+
+### Authentication
+
+The authentication process is made possible with [OAuth2](https://oauth.net/2/) and [Keycloak](https://www.keycloak.org/). Users are organized inside of the local Keycloak environment.
+
+---
+
+## Licensing
+
+The entire project is [MIT](https://www.mit.edu/) licensed, which means, that anyone can use this project and its source code for personal purposes.
