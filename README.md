@@ -2,7 +2,7 @@
 
 A voting app in Java [Spring Boot](https://spring.io/) and [Angular](https://angular.io/).
 
-This project is related to the [module 294](https://www.modulbaukasten.ch/module/294/1/de-DE?title=Frontend-einer-interaktiven-Webapplikation-realisieren) and [295](https://www.modulbaukasten.ch/module/295/1/de-DE?title=Backend-f%C3%BCr-Applikationen-realisieren) from the Swiss Education Ordinance in information technologies.
+This project is related to the module [294](https://www.modulbaukasten.ch/module/294/1/de-DE?title=Frontend-einer-interaktiven-Webapplikation-realisieren) and [295](https://www.modulbaukasten.ch/module/295/1/de-DE?title=Backend-f%C3%BCr-Applikationen-realisieren) from the Swiss Education Ordinance in information technologies.
 
 ---
 
