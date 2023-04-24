@@ -49,7 +49,7 @@ The frontend is implemented in [TypeScript](https://typescriptlang.org/) as an [
 
 ### Run
 
-Run `ng serve` for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+From the root project directory, cd into `\frontend\vote-app\` and run `ng serve` for a dev server. Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
 
 ---
 
