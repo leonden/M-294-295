@@ -32,7 +32,6 @@ public class ElectionResultService {
     public ElectionResult updateElectionResult(ElectionResult electionResult, Long id) {
         return repository.findById(id).map(electionResultOrig -> {
             electionResultOrig.setTitle(electionResult.getTitle());
-            electionResultOrig.setElectionId(electionResult.getElectionId());
             electionResultOrig.setResult(electionResult.getResult());
             electionResultOrig.setVotes(electionResult.getVotes());
             electionResultOrig.setAmountMale(electionResult.getAmountMale());

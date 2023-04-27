@@ -1,9 +1,7 @@
 package ch.ilv.voteapp.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.validation.constraints.NotEmpty;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.*;
 import lombok.Data;
 
 enum Result {
@@ -17,11 +15,14 @@ public class ElectionResult {
     @Id
     @GeneratedValue
     private Long id;
-    @NotEmpty
-    private Long electionId;
+    @OneToOne(optional = false)
+    @JoinColumn(name = "election_id")
+    private Election election;
     private String title;
     private int votes;
+    @JsonProperty("amount_female")
     private int amountFemale;
+    @JsonProperty("amount_male")
     private int amountMale;
     private Result result;
 
