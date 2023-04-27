@@ -27,7 +27,7 @@ public class Person {
     private String street;
     private String city;
     @JsonProperty("zip_code")
-    private int zipCode;
+    private String zipCode;
 
     public Person() {
     }
