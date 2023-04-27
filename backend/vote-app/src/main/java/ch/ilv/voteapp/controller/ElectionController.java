@@ -1,38 +1,62 @@
 package ch.ilv.voteapp.controller;
 
+import ch.ilv.voteapp.base.MessageResponse;
 import ch.ilv.voteapp.entity.Election;
-import ch.ilv.voteapp.repository.ElectionRepository;
+import ch.ilv.voteapp.security.Roles;
+import ch.ilv.voteapp.service.ElectionService;
 import jakarta.annotation.security.RolesAllowed;
+import jakarta.validation.Valid;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class ElectionController {
 
-    public final ElectionRepository electionRepository;
+    public final ElectionService electionService;
 
-    public ElectionController(ElectionRepository electionRepository) {
-        this.electionRepository = electionRepository;
+    public ElectionController(ElectionService electionService) {
+        this.electionService = electionService;
     }
 
-    @RolesAllowed("admin")
-    @PostMapping("api/v1/election")
-    public String saveElection(@RequestBody Election election) {
-        electionRepository.save(election);
-        return "\"" + election.getTitle() + "\" saved";
-    }
-
-    @RolesAllowed("admin")
     @GetMapping("api/v1/election")
-    public String getElection(@RequestBody Election election) {
-        electionRepository.save(election);
-        return "Got \"" + election.getTitle() + "\"";
+    @RolesAllowed(Roles.Read)
+    public ResponseEntity<List<Election>> all() {
+        List<Election> result = electionService.getElections();
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
-    @RolesAllowed("admin")
-    @DeleteMapping("api/v1/election")
-    public String deleteElection(@RequestBody Election election) {
-        electionRepository.save(election);
-        return "\"" + election.getTitle() + "\" deleted";
+    @GetMapping("api/v1/election/{id}")
+    @RolesAllowed(Roles.Read)
+    public ResponseEntity<Election> one(@PathVariable Long id) {
+        Election election = electionService.getElection(id);
+        return new ResponseEntity<>(election, HttpStatus.OK);
+    }
+
+    @PostMapping("api/v1/election")
+    @RolesAllowed(Roles.Update)
+    public ResponseEntity<Election> newElection(@Valid @RequestBody Election election) {
+        Election savedElection = electionService.insertElection(election);
+        return new ResponseEntity<>(savedElection, HttpStatus.OK);
+    }
+
+    @PutMapping("api/v1/election/{id}")
+    @RolesAllowed(Roles.Update)
+    public ResponseEntity<Election> updateElection(@Valid @RequestBody Election election, @PathVariable Long id) {
+        Election savedElection = electionService.updateElection(election, id);
+        return new ResponseEntity<>(savedElection, HttpStatus.OK);
+    }
+
+    @DeleteMapping("api/v1/election/{id}")
+    @RolesAllowed(Roles.Admin)
+    public ResponseEntity<MessageResponse> deleteElection(@PathVariable Long id) {
+        try {
+            return ResponseEntity.ok(electionService.deleteElection(id));
+        } catch (Throwable t) {
+            return ResponseEntity.internalServerError().build();
+        }
     }
 
 }
