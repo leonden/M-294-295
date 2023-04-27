@@ -35,6 +35,7 @@ public class PersonService {
             personOrig.setFirstName(person.getFirstName());
             personOrig.setLastName(person.getLastName());
             personOrig.setAdult(person.isAdult());
+            personOrig.setSex(person.getSex());
             personOrig.setAge(person.getAge());
             personOrig.setStreet(person.getStreet());
             personOrig.setCity(person.getCity());
