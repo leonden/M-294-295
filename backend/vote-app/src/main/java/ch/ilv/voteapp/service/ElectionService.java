@@ -1,6 +1,7 @@
 package ch.ilv.voteapp.service;
 
 import ch.ilv.voteapp.base.MessageResponse;
+import ch.ilv.voteapp.dataaccess.EntityNotFoundException;
 import ch.ilv.voteapp.entity.Election;
 import ch.ilv.voteapp.repository.ElectionRepository;
 import org.springframework.stereotype.Service;
@@ -22,9 +23,8 @@ public class ElectionService {
     }
 
     public Election getElection(Long id) {
-        return repository.findById(id).orElseThrow();
+        return repository.findById(id) .orElseThrow(() -> new EntityNotFoundException(id, Election.class));
     }
-
     public Election insertElection(Election election) {
         return repository.save(election);
     }

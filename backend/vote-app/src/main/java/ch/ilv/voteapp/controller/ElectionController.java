@@ -4,15 +4,19 @@ import ch.ilv.voteapp.base.MessageResponse;
 import ch.ilv.voteapp.entity.Election;
 import ch.ilv.voteapp.security.Roles;
 import ch.ilv.voteapp.service.ElectionService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@SecurityRequirement(name="bearerAuth")
 @RestController
+@Validated
 public class ElectionController {
 
     public final ElectionService electionService;
