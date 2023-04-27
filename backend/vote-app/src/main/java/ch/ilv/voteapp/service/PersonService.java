@@ -1,9 +1,10 @@
 package ch.ilv.voteapp.service;
 
 import ch.ilv.voteapp.base.MessageResponse;
+import ch.ilv.voteapp.dataaccess.EntityNotFoundException;
 import ch.ilv.voteapp.entity.Person;
 import ch.ilv.voteapp.repository.PersonRepository;
-import jakarta.persistence.EntityNotFoundException;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,11 +19,11 @@ public class PersonService {
     }
 
     public List<Person> getPersons() {
-        return repository.findByOrderByNameAscFirstnameAsc();
+        return repository.findByOrderByLastNameAscFirstNameAsc();
     }
 
     public Person getPerson(Long id) {
-        return repository.findById(id).orElseThrow(EntityNotFoundException::new);
+        return repository.findById(id) .orElseThrow(() -> new EntityNotFoundException(id, Person.class));
     }
 
     public Person insertPerson(Person person) {

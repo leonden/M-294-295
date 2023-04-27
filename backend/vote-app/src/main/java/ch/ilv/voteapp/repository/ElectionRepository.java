@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ElectionRepository extends JpaRepository<Election, Long> {
 
-    List<Election> findByOrderByNameAsc();
+    List<Election> findByOrderByTitleAsc();
 
 }

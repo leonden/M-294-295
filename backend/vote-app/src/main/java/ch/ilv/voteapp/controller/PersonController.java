@@ -26,7 +26,7 @@ public class PersonController {
     }
 
     @GetMapping("api/v1/person")
-    @RolesAllowed(Roles.Read)
+    @RolesAllowed(Roles.Admin)
     public ResponseEntity<List<Person>> all() {
         List<Person> result = personService.getPersons();
         return new ResponseEntity<>(result, HttpStatus.OK);

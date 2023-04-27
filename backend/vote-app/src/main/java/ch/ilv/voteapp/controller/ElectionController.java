@@ -36,14 +36,14 @@ public class ElectionController {
     }
 
     @PostMapping("api/v1/election")
-    @RolesAllowed(Roles.Update)
+    @RolesAllowed(Roles.Admin)
     public ResponseEntity<Election> newElection(@Valid @RequestBody Election election) {
         Election savedElection = electionService.insertElection(election);
         return new ResponseEntity<>(savedElection, HttpStatus.OK);
     }
 
     @PutMapping("api/v1/election/{id}")
-    @RolesAllowed(Roles.Update)
+    @RolesAllowed(Roles.Admin)
     public ResponseEntity<Election> updateElection(@Valid @RequestBody Election election, @PathVariable Long id) {
         Election savedElection = electionService.updateElection(election, id);
         return new ResponseEntity<>(savedElection, HttpStatus.OK);
