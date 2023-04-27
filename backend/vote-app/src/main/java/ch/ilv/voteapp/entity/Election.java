@@ -16,7 +16,6 @@ public class Election {
     @GeneratedValue
     private Long id;
     @Column(nullable = false)
-    @Size(max = 255)
     @NotEmpty
     private String title;
     private String description;

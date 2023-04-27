@@ -9,6 +9,10 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
+enum Sex {
+    MALE, FEMALE
+}
+
 @Data
 @Entity
 public class Person {
@@ -24,6 +28,7 @@ public class Person {
     @JsonProperty("last_name")
     private String lastName;
     private boolean adult;
+    private Sex sex;
     private int age;
     private String street;
     private String city;
