@@ -23,4 +23,9 @@ public class Election {
     public Election() {
     }
 
+    public Election(String title, String description, int progress) {
+        this.title = title;
+        this.description = description;
+        this.progress = progress;
+    }
 }
