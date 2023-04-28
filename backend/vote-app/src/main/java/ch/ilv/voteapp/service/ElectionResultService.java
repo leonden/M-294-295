@@ -1,7 +1,7 @@
 package ch.ilv.voteapp.service;
 
 import ch.ilv.voteapp.base.MessageResponse;
-import ch.ilv.voteapp.entity.ElectionResult;
+import ch.ilv.voteapp.entity.electionresult.ElectionResult;
 import ch.ilv.voteapp.repository.ElectionResultRepository;
 import org.springframework.stereotype.Service;
 

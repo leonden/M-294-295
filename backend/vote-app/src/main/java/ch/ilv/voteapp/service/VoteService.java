@@ -2,7 +2,7 @@ package ch.ilv.voteapp.service;
 
 import ch.ilv.voteapp.base.MessageResponse;
 import ch.ilv.voteapp.dataaccess.EntityNotFoundException;
-import ch.ilv.voteapp.entity.Vote;
+import ch.ilv.voteapp.entity.vote.Vote;
 import ch.ilv.voteapp.repository.VoteRepository;
 
 import org.springframework.stereotype.Service;
