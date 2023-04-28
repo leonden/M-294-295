@@ -37,7 +37,7 @@ Users can log in to the application via a login page. Elections and their result
 
 The application is saved in a [GitHub](https://github.com/leonden/vote-app) repository.
 
-Feel free to fork the project to your local machine.
+Feel free to [fork](https://github.com/leonden/vote-app/fork) the project or clone it to your local machine.
 
 ```shell
 git clone https://github.com/leonden/vote-app.git
