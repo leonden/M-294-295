@@ -47,10 +47,10 @@ class PersonControllerTest {
 
     @Test
     @Order(1)
-    void testGetAddresses() throws Exception {
+    void testGetPerson() throws Exception {
         String accessToken = obtainAccessToken();
 
-        api.perform(get("/api/v1/person").header("Authorization", "Bearer " + accessToken)
+        api.perform(get("api/v1/person").header("Authorization", "Bearer " + accessToken)
                         .with(csrf()))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(containsString("Lombard Street 150")));
