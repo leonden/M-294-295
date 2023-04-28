@@ -1,7 +1,7 @@
 package ch.ilv.voteapp.repository;
 
 
-import ch.ilv.voteapp.entity.Vote;
+import ch.ilv.voteapp.entity.vote.Vote;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
