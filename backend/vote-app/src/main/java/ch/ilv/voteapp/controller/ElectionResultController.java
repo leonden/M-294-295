@@ -1,7 +1,7 @@
 package ch.ilv.voteapp.controller;
 
 import ch.ilv.voteapp.base.MessageResponse;
-import ch.ilv.voteapp.entity.ElectionResult;
+import ch.ilv.voteapp.entity.electionresult.ElectionResult;
 import ch.ilv.voteapp.security.Roles;
 import ch.ilv.voteapp.service.ElectionResultService;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
