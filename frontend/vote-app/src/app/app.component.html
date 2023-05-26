@@ -1,25 +1,27 @@
 <nav id="navigation">
-  <mat-toolbar color="accent">
-    <button
-      (click)="drawer.toggle()"
-      mat-icon-button
-      class="example-icon"
-      aria-label="Example icon-button with menu icon"
-    >
-      <mat-icon>menu</mat-icon>
-    </button>
-    <img
-      routerLink="/home"
-      id="logo-title"
-      src="../assets/images/votez_title.png"
-      alt=""
-  /></mat-toolbar>
+  <mat-toolbar id="toolbar" #toolbar color="basic">
+    <div class="nav-wrapper">
+      <button
+        (click)="drawer.toggle()"
+        ngModel
+        mat-icon-button
+        class="example-icon"
+        aria-label="Example icon-button with menu icon"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img
+        routerLink="/"
+        id="logo-title"
+        src="../assets/images/votez_title.png"
+        alt=""
+      />
+    </div>
+    <app-login></app-login
+  ></mat-toolbar>
 
-  <mat-drawer-container [hasBackdrop]="true">
-    <mat-drawer #drawer mode="over">
-      <app-login></app-login>
-      <a href="">link 1</a></mat-drawer
-    >
+  <mat-drawer-container style="height: 100vh" [hasBackdrop]="true">
+    <mat-drawer #drawer mode="over"> </mat-drawer>
     <mat-drawer-content>
       <router-outlet></router-outlet>
     </mat-drawer-content>

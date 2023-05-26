@@ -1,4 +1,8 @@
 <div>
-  <button (click)="login()" color="primary" mat-raised-button>Login</button>
-  <button (click)="logout()" color="primary" mat-raised-button>Logout</button>
+  <div *ngIf="!oauthService.hasValidAccessToken()">
+    <button (click)="login()" color="primary" mat-raised-button>Login</button>
+  </div>
+  <div *ngIf="oauthService.hasValidAccessToken()">
+    <button (click)="logout()" color="primary" mat-raised-button>Logout</button>
+  </div>
 </div>

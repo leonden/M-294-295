@@ -5,11 +5,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthConfig, OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
+import { MatOptionModule } from '@angular/material/core';
 import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
@@ -28,7 +31,7 @@ export const authConfig: AuthConfig = {
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,
-  clientId: 'vote-app',
+  clientId: 'voteapp',
   scope: 'openid profile roles offline_access',
   responseType: 'code',
   showDebugInformation: true,
@@ -58,6 +61,9 @@ export function storageFactory(): OAuthStorage {
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatOptionModule,
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },
