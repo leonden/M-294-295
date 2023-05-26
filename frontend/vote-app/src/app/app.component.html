@@ -1,1 +1,27 @@
-<router-outlet></router-outlet>
+<nav id="navigation">
+  <mat-toolbar color="accent">
+    <button
+      (click)="drawer.toggle()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img
+      routerLink="/home"
+      id="logo-title"
+      src="../assets/images/votez_title.png"
+      alt=""
+  /></mat-toolbar>
+
+  <mat-drawer-container [hasBackdrop]="true">
+    <mat-drawer #drawer mode="over">
+      <app-login></app-login>
+      <a href="">link 1</a></mat-drawer
+    >
+    <mat-drawer-content>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</nav>
