@@ -1,0 +1,24 @@
+nav {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-title {
+      width: 100px;
+      user-select: none;
+      cursor: pointer;
+    }
+
+    .nav-wrapper {
+      width: 30%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        margin: 0;
+      }
+    }
+  }
+}
