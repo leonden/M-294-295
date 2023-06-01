@@ -3,14 +3,14 @@ export class Person {
   public firstName = '';
   public lastName = '';
   public sex = Sex;
-  public adult = '';
-  public age = '';
+  public adult = false;
+  public age = 0;
   public street = '';
   public city = '';
   public zipCode = '';
 }
 
-enum Sex {
+export enum Sex {
   MALE,
   FEMALE,
 }

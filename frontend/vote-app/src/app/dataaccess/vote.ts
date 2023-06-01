@@ -8,7 +8,7 @@ export class Vote {
   public votedFor = VotedFor;
 }
 
-enum VotedFor {
+export enum VotedFor {
   A,
   B,
 }
