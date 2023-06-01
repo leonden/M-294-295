@@ -1,20 +1,4 @@
-<nav id="navigation">
-  <mat-toolbar id="toolbar" #toolbar color="basic">
-    <img
-      routerLink="/"
-      class="logo-title"
-      src="../assets/images/votez_title.png"
-      alt="" />
-    <div class="nav-wrapper">
-      <button routerLink="/" mat-button color="primary">Home</button
-      ><button routerLink="/elections" mat-button color="primary">
-        Elections
-      </button>
-
-      <h3>Hey User</h3>
-      <app-login></app-login></div
-  ></mat-toolbar>
-</nav>
+<app-navigation></app-navigation>
 
 <main>
   <router-outlet></router-outlet>
