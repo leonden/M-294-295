@@ -25,6 +25,8 @@ import { AppAuthService } from './services/app.auth.service';
 
 import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
+import { ElectionsComponent } from './components/pages/elections/elections.component';
+import { ElectionCardComponent } from './components/election-card/election-card.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://desktop-8umomf4:8080/realms/ILV',
@@ -46,7 +48,7 @@ export function storageFactory(): OAuthStorage {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, ElectionsComponent, ElectionCardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
