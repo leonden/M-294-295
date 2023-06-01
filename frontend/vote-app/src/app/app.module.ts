@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthConfig, OAuthModule, OAuthStorage } from 'angular-oauth2-oidc';
 import { environment } from 'src/environments/environment';
 import { MatOptionModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
@@ -27,9 +29,10 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ElectionsComponent } from './components/pages/elections/elections.component';
 import { ElectionCardComponent } from './components/election-card/election-card.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 export const authConfig: AuthConfig = {
-  issuer: 'http://desktop-8umomf4:8080/realms/ILV',
+  issuer: 'http://localhost:8080/realms/ILV',
   requireHttps: false,
   redirectUri: environment.frontendBaseUrl,
   postLogoutRedirectUri: environment.frontendBaseUrl,
@@ -48,7 +51,14 @@ export function storageFactory(): OAuthStorage {
 }
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, ElectionsComponent, ElectionCardComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    ElectionsComponent,
+    ElectionCardComponent,
+    NavigationComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -66,6 +76,8 @@ export function storageFactory(): OAuthStorage {
     MatFormFieldModule,
     MatSelectModule,
     MatOptionModule,
+    MatCardModule,
+    MatGridListModule,
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },
