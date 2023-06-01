@@ -1,28 +1,27 @@
 nav {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   mat-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .logo-title {
+      width: 100px;
+      user-select: none;
+      cursor: pointer;
+    }
+
     .nav-wrapper {
-      width: fit-content;
+      width: 30%;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      #logo-title {
-        width: 100px;
-        user-select: none;
-        cursor: pointer;
+      h3 {
+        margin: 0;
       }
     }
   }
-  mat-drawer {
-    width: 400px;
-  }
 }
 
-@media (max-width: 576px) {
-  nav {
-    mat-drawer {
-      width: 100%;
-    }
-  }
+main {
 }
