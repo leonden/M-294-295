@@ -16,6 +16,7 @@ public class Election {
     private Long id;
     @Column(nullable = false)
     private String title;
+    @Column(length = 1024)
     private String description;
     //@Size(min = 0, max = 100)
     private int progress;
