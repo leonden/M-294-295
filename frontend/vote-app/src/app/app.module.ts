@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environment';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 import {
   HTTP_INTERCEPTORS,
   HttpClientModule,
@@ -30,6 +31,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ElectionsComponent } from './components/pages/elections/elections.component';
 import { ElectionCardComponent } from './components/election-card/election-card.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -58,6 +60,7 @@ export function storageFactory(): OAuthStorage {
     ElectionsComponent,
     ElectionCardComponent,
     NavigationComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ export function storageFactory(): OAuthStorage {
     MatOptionModule,
     MatCardModule,
     MatGridListModule,
+    MatDialogModule,
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },
