@@ -10,8 +10,14 @@
       ><button routerLink="/elections" mat-button color="primary">
         Elections
       </button>
-
-      <h3>Hey User</h3>
+      <button
+        *appIsInRole="'admin'"
+        routerLink="/create-election"
+        mat-button
+        color="primary"
+      >
+        Create Election
+      </button>
       <app-login></app-login></div
   ></mat-toolbar>
 </nav>
