@@ -15,11 +15,9 @@ export class LoginComponent {
 
   public login() {
     this.authService.login();
-    console.log('login');
   }
 
   public logout() {
     this.authService.logout();
-    console.log('logout');
   }
 }
