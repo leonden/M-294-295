@@ -34,6 +34,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { ElectionOverviewComponent } from './components/election-overview/election-overview.component';
 import { CreateElectionComponent } from './components/pages/create-election/create-election.component';
+import { IsInRoleDirective } from './dir/is.in.role.dir';
+import { IsInRolesDirective } from './dir/is.in.roles.dir';
+import { CreateElectionFormComponent } from './components/create-election-form/create-election-form.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -65,6 +68,9 @@ export function storageFactory(): OAuthStorage {
     ConfirmDialogComponent,
     ElectionOverviewComponent,
     CreateElectionComponent,
+    IsInRoleDirective,
+    IsInRolesDirective,
+    CreateElectionFormComponent,
   ],
   imports: [
     BrowserModule,
