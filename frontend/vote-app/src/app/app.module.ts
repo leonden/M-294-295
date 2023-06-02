@@ -37,6 +37,7 @@ import { CreateElectionComponent } from './components/pages/create-election/crea
 import { IsInRoleDirective } from './dir/is.in.role.dir';
 import { IsInRolesDirective } from './dir/is.in.roles.dir';
 import { CreateElectionFormComponent } from './components/create-election-form/create-election-form.component';
+import { MatInputModule } from '@angular/material/input';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -92,6 +93,7 @@ export function storageFactory(): OAuthStorage {
     MatCardModule,
     MatGridListModule,
     MatDialogModule,
+    MatInputModule,
   ],
   providers: [
     { provide: AuthConfig, useValue: authConfig },
