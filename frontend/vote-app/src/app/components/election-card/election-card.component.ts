@@ -12,8 +12,9 @@ export class ElectionCardComponent implements OnInit {
 
   ngOnInit() {
     const electionService = new ElectionService();
-    electionService
-      .getElections()
-      .subscribe((response) => (this.electionData = response));
+    electionService.getElections().subscribe((response) => {
+      this.electionData = response;
+      console.log(response);
+    });
   }
 }
