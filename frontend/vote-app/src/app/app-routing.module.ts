@@ -6,8 +6,14 @@ import { CreateElectionComponent } from './components/pages/create-election/crea
 import { AppRoles } from './app.roles';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'elections', component: ElectionsComponent },
+  {
+    path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'elections',
+    component: ElectionsComponent,
+  },
   {
     path: 'create-election',
     component: CreateElectionComponent,
