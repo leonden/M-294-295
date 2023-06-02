@@ -1,11 +1,24 @@
 <form class="example-form">
   <mat-form-field class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi" />
+    <mat-label>Election Title</mat-label>
+    <input matInput placeholder="Eg. My election" value="" />
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+    <mat-label>Description</mat-label>
+    <textarea matInput placeholder="Eg. This election is about..."></textarea>
   </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Election Progress</mat-label>
+    <input
+      matInput
+      placeholder="Set initial progress"
+      value=""
+      type="number"
+      min="0"
+      max="100"
+    />
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit">Submit</button>
 </form>
