@@ -33,6 +33,7 @@ import { ElectionCardComponent } from './components/election-card/election-card.
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { ElectionOverviewComponent } from './components/election-overview/election-overview.component';
+import { CreateElectionComponent } from './components/pages/create-election/create-election.component';
 
 export const authConfig: AuthConfig = {
   issuer: 'http://localhost:8080/realms/ILV',
@@ -63,6 +64,7 @@ export function storageFactory(): OAuthStorage {
     NavigationComponent,
     ConfirmDialogComponent,
     ElectionOverviewComponent,
+    CreateElectionComponent,
   ],
   imports: [
     BrowserModule,
