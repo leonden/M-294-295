@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ElectionService } from 'src/app/services/election.service';
 import { Election } from 'src/app/dataaccess/election';
+import { ElectionOverviewService } from 'src/app/services/election-overview.service';
 
 @Component({
   selector: 'app-election-card',
@@ -11,8 +11,8 @@ export class ElectionCardComponent implements OnInit {
   electionData: Election = {} as Election;
 
   ngOnInit() {
-    const electionService = new ElectionService();
-    electionService.getElections().subscribe((response) => {
+    const electionOverviewService = new ElectionOverviewService();
+    electionOverviewService.getElections().subscribe((response) => {
       this.electionData = response;
       console.log(response);
     });
